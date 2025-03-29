@@ -4,6 +4,7 @@
 <meta name="keywords" content="science bowl, ocean bowl, science olympiad, bio olympiad, AP chemistry, lecture notes, school resources, NErDy club" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Welcome to the NErDy Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style type="text/css">
 body, td, th {
     font-family: Arial, Helvetica, sans-serif;
@@ -14,6 +15,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #800000; /* Burgundy background */
+    font-family: 'Roboto', sans-serif;
 }
 #hero {
     position: sticky; /* Make the hero section sticky */
@@ -69,6 +71,8 @@ td.section-title {
 h1, h2 {
     color: #800000; /* Burgundy for headings */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for readability */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 a {
     color: #800000; /* Burgundy for links */
@@ -128,6 +132,18 @@ a:hover {
       hero.classList.remove("hidden"); // Remove class to slide back in
     }
   });
+
+  function openModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = src;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+  }
 </script>
 </head>
 <body>
@@ -370,39 +386,31 @@ a:hover {
   </table>
 </div>
 
+<div id="nerdy-gallery" style="background-color:white; color: #800000; padding: 20px; text-align: center; margin-top: 20px;">
+  <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">Bravo NErDy 2024 Team Highlights</h2>
+  <p style="font-size: 16px; margin-bottom: 20px;">A glimpse into the achievements and moments of the Bravo NErDy 2024 Team.</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    <!-- Image 1 -->
+    <img src="https://3.files.edl.io/6675/24/02/20/191629-ad8a0a28-9bdd-4ab5-b204-9136e223649d.png" alt="Bravo NErDy Image 1" onclick="openModal(this.src)" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+    <!-- Image 2 -->
+    <img src="https://3.files.edl.io/b5d5/24/02/20/191645-defeb627-6349-4961-b896-b03fd27692e0.png" alt="Bravo NErDy Image 2" onclick="openModal(this.src)" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+    <!-- Image 3 -->
+    <img src="https://3.files.edl.io/8a66/24/03/06/221848-d4e98b15-3129-4541-947e-b4a2165e577e.jpeg" alt="Bravo NErDy Image 3" onclick="openModal(this.src)" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+    <!-- Image 4 -->
+    <img src="https://3.files.edl.io/da32/24/03/08/180623-c34f26a5-8369-4b16-b6d6-9801a008529b.jpeg" alt="Bravo NErDy Image 4" onclick="openModal('https://3.files.edl.io/af43/24/03/08/180622-4bc7c861-c7cf-46c7-8824-7a98346d451c.jpeg')" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+  </div>
+</div>
+
+<!-- Modal for Image Viewer -->
+<div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+  <span onclick="closeModal()" style="position: absolute; top: 20px; right: 40px; color: white; font-size: 30px; cursor: pointer;">&times;</span>
+  <img id="modalImage" src="" style="max-width: 90%; max-height: 90%; border-radius: 10px;">
+</div>
+
 <div id="footer">
   <p style="font-size: 24px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); margin: 0;">Connect with NErDy</p>
   <a href="https://discord.gg/CVKZxBCUTv" class="button-link" target="_blank" style="display: inline-block; margin: 10px; background-color: rgba(0, 0, 0, 0.6); color: #FFD700; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 18px;">Join NErDy Discord</a>
   <a href="https://www.instagram.com/bravo.nerdy" class="button-link" target="_blank" style="display: inline-block; margin: 10px; background-color: rgba(0, 0, 0, 0.6); color: #FFD700; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 18px;">Follow NErDy on Instagram</a>
 </div>
-
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    const options = { month: 'long', day: 'numeric', year: 'numeric' };
-    const date = now.toLocaleDateString('en-US', options);
-    let hours = now.getHours();
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12; // Convert to 12-hour format
-    const time = `${hours}:${minutes}:${seconds} ${ampm}`;
-    document.getElementById('liveDateTime').innerText = `${date} ${time}`;
-  }
-  setInterval(updateDateTime, 1000); // Update every second
-
-  document.addEventListener("scroll", function () {
-    const hero = document.getElementById("hero");
-    const mainContent = document.getElementById("main-content");
-    const mainContentTop = mainContent.getBoundingClientRect().top;
-
-    // Trigger the slide-up effect earlier by adjusting the threshold
-    if (mainContentTop <= 100) { // Adjusted threshold to 100px
-      hero.classList.add("hidden"); // Add class to slide out
-    } else {
-      hero.classList.remove("hidden"); // Remove class to slide back in
-    }
-  });
-</script>
 </body>
 </html>
