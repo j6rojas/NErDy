@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="keywords" content="science bowl, ocean bowl, science olympiad, bio olympiad, AP chemistry, lecture notes, school resources, NErDy club" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to the NErDy Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style type="text/css">
+body, td, th {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #800000; /* Burgundy background */
+    font-family: 'Roboto', sans-serif;
+}
+#hero {
+    position: sticky; /* Make the hero section sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other content */
+    width: 100%;
+    height: 400px;
+    background: url('https://3.files.edl.io/6675/24/02/20/191629-ad8a0a28-9bdd-4ab5-b204-9136e223649d.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    border-bottom: 4px solid #800000; /* Add a border to separate it visually */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for sliding out */
+}
+#hero.hidden {
+    transform: translateY(-100%); /* Slide out upwards */
+    opacity: 0; /* Fade out */
+}
+#main-content {
+    background-color: #ffffff; /* White background for the middle */
+    border: 4px solid #800000; /* Burgundy border */
+    padding: 20px;
+    margin: 0 auto; /* Removed top margin to ensure it touches the footer */
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+table {
+    background-color: #ffffff; /* White background for tables */
+    border: 2px solid #800000; /* Burgundy border for tables */
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+td {
+    background-color: #ffffff; /* White for table cells */
+    padding: 15px;
+    border: 1px solid #800000; /* Burgundy border for cells */
+    border-radius: 5px;
+}
+td.section-title {
+    color: #ffffff; /* White text */
+    background-color: #800000; /* Burgundy background */
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+h1, h2 {
+    color: #800000; /* Burgundy for headings */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for readability */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+a {
+    color: #800000; /* Burgundy for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #333; /* Dark gray hover effect */
+}
+#footer {
+    background: url('https://pbs.twimg.com/profile_banners/4746184698/1552346698/1500x500') no-repeat center center;
+    background-size: cover;
+    padding: 80px 0; /* Increased padding to make the section larger */
+    text-align: center;
+    color: white;
+    margin-top: -4px; /* Remove the gap between sections */
+}
+.button-link {
+    background-color: #800000; /* Burgundy button */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+.button-link:hover {
+    background-color: #333; /* Dark gray hover effect */
+}
+</style>
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = { month: 'long', day: 'numeric', year: 'numeric' };
+    const date = now.toLocaleDateString('en-US', options);
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12; // Convert to 12-hour format
+    const time = `${hours}:${minutes}:${seconds} ${ampm}`;
+    document.getElementById('liveDateTime').innerText = `${date} ${time}`;
+  }
+  setInterval(updateDateTime, 1000); // Update every second
+
+  document.addEventListener("scroll", function () {
+    const hero = document.getElementById("hero");
+    const mainContent = document.getElementById("main-content");
+    const mainContentTop = mainContent.getBoundingClientRect().top;
+
+    // Trigger the slide-up effect earlier by adjusting the threshold
+    if (mainContentTop <= 100) { // Adjusted threshold to 100px
+      hero.classList.add("hidden"); // Add class to slide out
+    } else {
+      hero.classList.remove("hidden"); // Remove class to slide back in
+    }
+  });
+
+  function openModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = src;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+  }
+</script>
+</head>
+<body>
+<!-- Hero Section -->
+<div id="hero">
+  <h1 style="font-family: 'Verdana', sans-serif; font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); background-color: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px; display: inline-block;">
+    Welcome to the NErDy Page
+  </h1>
+</div>
+
+<div id="main-content">
+  <table width="1132" border="8" cellspacing="0" cellpadding="4" align="center">
+    <tr>
+      <td colspan="2">
+        <div align="center">
+          <h1>Welcome to the NErDy Page</h1>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="1080" border="0" align="center" cellpadding="4" cellspacing="0">
+          <tr>
+            <td width="600">
+              <h1><a href="https://drive.google.com/drive/u/0/folders/1zYpvp0s2QDAOjnArKGYiGLqLS3zp1AYL" target="_blank">NErDy Club Resources</a></h1>
+            </td>
+            <td width="254">
+              <div align="center">
+                <div id="google_translate_element"></div>
+                <script>
+                  function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                  }
+                </script>
+                <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <a href="http://google.com" target="_blank">Search Google.com</a> | 
+                <a href="https://www.google.com/maps/" target="_blank">Google Maps</a> | 
+                <a href="https://earth.google.com/web/" target="_blank">Google Earth</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#FFFFCC">
+        <div align="center">
+          <table width="1114" border="2" cellspacing="0" cellpadding="4">
+            <tbody>
+              <tr>
+                <td width="329" valign="top">
+                  <table width="100%" border="4" cellspacing="1" cellpadding="4" style="height: 100%;">
+                    <tr>
+                      <td class="section-title">Science Bowl</td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFCCCC" style="height: 300px; vertical-align: top;">
+                        <table width="100%" border="1" cellspacing="2" cellpadding="4">
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Math</strong><br>
+                              <a href="https://artofproblemsolving.com/videos" target="_blank" style="text-decoration: none; color: blue;">Art of Problem Solving Videos</a><br>
+                              <a href="https://drive.google.com/file/d/1sYwlm8gFKDHNq4dPuUnC6P1oeGMTDuWH/view?usp=drive_link" target="_blank" style="text-decoration: none; color: blue;">AoPS Intro to Algebra</a><br>
+                              <a href="https://drive.google.com/file/d/1hNf3gfb3RfHdh_bBTtwJ8ZLHhl1wxN02/view?usp=sharing" target="_blank" style="text-decoration: none; color: blue;">AoPS Vol. 1, The Basics</a><br>
+                              <a href="https://drive.google.com/file/d/1hfYawTa6LqVF0ipWaCIILOeTjYJlqpfv/view?usp=drive_link" target="_blank" style="text-decoration: none; color: blue;">AoPS Vol. 2 and Beyond</a><br>
+                              <a href="https://drive.google.com/file/d/1jyMd1oEBeVbUn1LKv4fSjGYKSpeiPvRs/view?usp=drive_link" target="_blank" style="text-decoration: none; color: blue;">AoPS Precalculus</a><br>
+                              <a href="https://drive.google.com/file/d/1DuZzRANqr_ic9cqjjBNuiJj8PgHNYSP0/view?usp=drive_link" target="_blank" style="text-decoration: none; color: blue;">AoPS Calculus</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Chemistry</strong><br>
+                              <a href="https://chemed.chem.purdue.edu/genchem/topicreview/index.php" target="_blank" style="text-decoration: none; color: blue;">Purdue Chemistry</a><br>
+                              <a href="https://chem.libretexts.org/Bookshelves/General_Chemistry/Chemistry_1e_(OpenSTAX)" target="_blank" style="text-decoration: none; color: blue;">LibreTexts Chemistry</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Physics</strong><br>
+                              <a href="https://openstax.org/books/college-physics-2e/pages/1-introduction-to-science-and-the-realm-of-physics-physical-quantities-and-units" target="_blank" style="text-decoration: none; color: blue;">OpenStax College Physics</a><br>
+                              <a href="https://drive.google.com/file/d/1o4Hk8qvYl0xlVkHJpwaWMMZU5QMsTCxn/view?usp=drive_link" target="_blank" style="text-decoration: none; color: blue;">Conceptual Physics, 12e</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Earth Science</strong><br>
+                              <a href="https://gotbooks.miracosta.edu/" target="_blank" style="text-decoration: none; color: blue;">MiraCosta Earth Science Books</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Astronomy</strong><br>
+                              <a href="https://openstax.org/books/astronomy-2e/pages/1-introduction" target="_blank" style="text-decoration: none; color: blue;">OpenStax Astronomy</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Biology</strong><br>
+                              <a href="https://drive.google.com/file/d/1Q6a97T1R4rxo4Z5JTbfth_WAyrps1V3F/view?usp=drive_link" target="_blank" style="text-decoration: none; color: blue;">Campbell 12e</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Energy</strong></td>
+                          </tr>
+                          <tr>
+                            <td bgcolor="#FFE4E1"><strong>Other</strong></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td width="329" valign="top">
+                  <table width="100%" border="4" cellspacing="1" cellpadding="4" style="height: 100%;">
+                    <tr>
+                      <td class="section-title">Ocean Bowl</td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#CCFFCC" style="height: 445px; vertical-align: top; text-align: center;">
+                        <strong>Coming Soon!!!</strong>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td width="329" valign="top">
+                  <table width="100%" border="4" cellspacing="1" cellpadding="4" style="height: 100%;">
+                    <tr>
+                      <td class="section-title">Science Olympiad</td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#EFCC83" style="height: 445px; vertical-align: top; text-align: center;">
+                        <strong>Coming Soon!!!</strong>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" bgcolor="#D5F8D2" style="padding-bottom: 10px;">
+                  <table width="1030" border="2" align="center" cellpadding="4" cellspacing="0">
+                    <tr>
+                      <td class="section-title" width="291">Bio Olympiad</td>
+                      <td width="715" bgcolor="#FFFFCD" style="text-align: center;">
+                        <strong>Coming Soon!!!</strong>
+                      </td>
+                    </tr>
+                  </table>
+                  <div style="margin-bottom: 10px;"></div> <!-- Added spacing -->
+                  <table width="1030" border="2" align="center" cellpadding="4" cellspacing="0">
+                    <tr>
+                      <td class="section-title" width="291">Chem Olympiad</td>
+                      <td width="715" bgcolor="#FFFFCD" style="text-align: center;">
+                        <strong>Coming Soon!!!</strong>
+                      </td>
+                    </tr>
+                  </table>
+                  <div style="margin-bottom: 10px;"></div> <!-- Added spacing -->
+                  <table width="1030" border="2" align="center" cellpadding="4" cellspacing="0">
+                    <tr>
+                      <td class="section-title" width="291">AMC 10/12</td>
+                      <td width="715" bgcolor="#FFFFCD" style="text-align: center;">
+                        <strong>Coming Soon!!!</strong>
+                      </td>
+                    </tr>
+                  </table>
+                  <div style="margin-bottom: 10px;"></div> <!-- Added spacing -->
+                  <table width="1096" border="2" align="center" cellspacing="0" cellpadding="4" style="margin-bottom: 10px;">
+                    <tbody>
+                      <tr>
+                        <td width="374" bgcolor="#C0F593"><div align="center">
+                          <table width="374" border="1" cellspacing="1" cellpadding="1">
+                            <tr>
+                              <td width="324" bgcolor="#FFFFCC"><div align="center"><strong><a href="https://www.youtube.com/@MICHAELMORGANCHEM" target="_blank" style="color: blue;">Michael Morgan's YouTube Channel</a></strong></div></td>
+                            </tr>
+                          </table>
+                        </div></td>
+                        <td width="168" bgcolor="#CCFFFC"><div align="center">
+                          <table width="168" border="1" cellspacing="1" cellpadding="1">
+                            <tr>
+                              <td width="163" bgcolor="#FFFFCC"><div align="center"><a href="https://bravomedhs.lausd.org/" target="_blank" style="color: blue;"><strong>School Website</strong></a></div></td>
+                            </tr>
+                          </table>
+                        </div></td>
+                        <td width="200" bgcolor="#D2D1D1"><div align="center">
+                          <table width="190" border="1" cellspacing="1" cellpadding="1">
+                            <tr>
+                              <td width="182" bgcolor="#FFFFCC"><div align="center"><strong><a href="https://morganchem-tuwsy.ondigitalocean.app/" target="_blank" style="color: blue;">AP Chem Class Website</a></strong></div></td>
+                            </tr>
+                          </table>
+                        </div></td>
+                        <td width="310" bgcolor="#CDA7F1"><div align="center">
+                          <table width="310" border="1">
+                            <tbody>
+                              <tr>
+                                <td width="275" bgcolor="#FFFFCD"><div align="center"><strong><a href="https://drive.google.com/drive/u/0/folders/1zYpvp0s2QDAOjnArKGYiGLqLS3zp1AYL" target="_blank" style="color: blue;">Class Resources Google Drive</a></strong></div></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div style="margin-bottom: 10px;"></div> <!-- Added spacing -->
+                  <table width="881" border="1" align="center" cellspacing="2" cellpadding="1">
+                    <tbody>
+                      <tr>
+                        <td width="400" bgcolor="#CEE7F2">
+                          <div align="center">
+                            <table width="400" border="1" cellspacing="2" cellpadding="1">
+                              <tbody>
+                                <tr>
+                                  <td bgcolor="#FEF4B6"><div align="center"><strong>Calendar</strong></div></td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#FEF4B6">
+                                    <!-- Embed Google Calendar -->
+                                    <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=YOUR_TIMEZONE" style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                        <td width="565" bgcolor="#E9D3F7"><div align="center"><table width="550" border="1" cellspacing="2" cellpadding="1">
+                          <tbody>
+                            <tr>
+                              <td colspan="3" bgcolor="#FFFFDC">
+                                <div align="center">
+                                  <img src="https://3.files.edl.io/a868/25/03/10/160248-b5fa5473-20d5-442f-a1f8-bad72f797ce4.jpg" alt="NErDy Club" style="max-width: 100%; height: auto;">
+                                  <div style="font-size: 14px; color: #000; margin-top: 5px;">NErDy Bravo A & B Team @LADWP Scibowl 2025.</div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table></div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="nerdy-gallery" style="background-color:white; color: #800000; padding: 20px; text-align: center; margin-top: 20px;">
+  <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">Bravo NErDy 2024 Team Highlights</h2>
+  <p style="font-size: 16px; margin-bottom: 20px;">A glimpse into the achievements and moments of the Bravo NErDy 2024 Team.</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    <!-- Image 1 -->
+    <img src="https://3.files.edl.io/6675/24/02/20/191629-ad8a0a28-9bdd-4ab5-b204-9136e223649d.png" alt="Bravo NErDy Image 1" onclick="openModal(this.src)" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+    <!-- Image 2 -->
+    <img src="https://3.files.edl.io/b5d5/24/02/20/191645-defeb627-6349-4961-b896-b03fd27692e0.png" alt="Bravo NErDy Image 2" onclick="openModal(this.src)" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+    <!-- Image 3 -->
+    <img src="https://3.files.edl.io/8a66/24/03/06/221848-d4e98b15-3129-4541-947e-b4a2165e577e.jpeg" alt="Bravo NErDy Image 3" onclick="openModal(this.src)" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+    <!-- Image 4 -->
+    <img src="https://3.files.edl.io/da32/24/03/08/180623-c34f26a5-8369-4b16-b6d6-9801a008529b.jpeg" alt="Bravo NErDy Image 4" onclick="openModal('https://3.files.edl.io/af43/24/03/08/180622-4bc7c861-c7cf-46c7-8824-7a98346d451c.jpeg')" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer;">
+  </div>
+</div>
+
+<!-- Modal for Image Viewer -->
+<div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+  <span onclick="closeModal()" style="position: absolute; top: 20px; right: 40px; color: white; font-size: 30px; cursor: pointer;">&times;</span>
+  <img id="modalImage" src="" style="max-width: 90%; max-height: 90%; border-radius: 10px;">
+</div>
+
+<div id="footer">
+  <p style="font-size: 24px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); margin: 0;">Connect with NErDy</p>
+  <a href="https://discord.gg/CVKZxBCUTv" class="button-link" target="_blank" style="display: inline-block; margin: 10px; background-color: rgba(0, 0, 0, 0.6); color: #FFD700; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 18px;">Join NErDy Discord</a>
+  <a href="https://www.instagram.com/bravo.nerdy" class="button-link" target="_blank" style="display: inline-block; margin: 10px; background-color: rgba(0, 0, 0, 0.6); color: #FFD700; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 18px;">Follow NErDy on Instagram</a>
+</div>
+</body>
+</html>
